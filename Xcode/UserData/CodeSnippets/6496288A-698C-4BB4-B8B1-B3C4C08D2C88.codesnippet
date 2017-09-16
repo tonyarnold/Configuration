@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>safeboolvar</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>var &lt;#variableName#&gt;: Bool {
+    &lt;#variableName#&gt;Lock.wait()
+    defer { &lt;#variableName#&gt;Lock.signal() }
+
+    return &lt;#variableName#&gt;Count &gt; 0
+}
+
+@discardableResult
+private func increment&lt;#variableName#&gt;() -&gt; Int32 {
+    &lt;#variableName#&gt;Lock.wait()
+    defer { &lt;#variableName#&gt;Lock.signal() }
+
+    &lt;#variableName#&gt;Count += 1
+    return &lt;#variableName#&gt;Count
+}
+
+@discardableResult
+private func decrement&lt;#variableName#&gt;() -&gt; Int32 {
+    &lt;#variableName#&gt;Lock.wait()
+    defer { &lt;#variableName#&gt;Lock.signal() }
+
+    &lt;#variableName#&gt;Count -= 1
+    return &lt;#variableName#&gt;Count
+}
+
+private let &lt;#variableName#&gt;Lock = DispatchSemaphore(value: 1)
+private var &lt;#variableName#&gt;Count: Int32 = 0</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>6496288A-698C-4BB4-B8B1-B3C4C08D2C88</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>Safe incrementing Bool</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>

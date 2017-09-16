@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDECodeSnippetCompletionPrefix</key>
+	<string>rost</string>
+	<key>IDECodeSnippetCompletionScopes</key>
+	<array>
+		<string>ClassImplementation</string>
+	</array>
+	<key>IDECodeSnippetContents</key>
+	<string>struct &lt;# Options #&gt; : RawOptionSetType, BooleanType {
+    let rawValue: UInt
+    init(nilLiteral: ()) { self.value = 0 }
+    init(_ value: UInt = 0) { self.value = value }
+    init(rawValue value: UInt) { self.value = value }
+    var boolValue: Bool { return value != 0 }
+    var rawValue: UInt { return value }
+    static var allZeros: &lt;# Options #&gt; { return self(0) }
+
+    static var None: &lt;# Options #&gt;         { return self(0b0000) }
+    static var &lt;# Option #&gt;: &lt;# Options #&gt;     { return self(0b0001) }
+    // ...
+}
+</string>
+	<key>IDECodeSnippetIdentifier</key>
+	<string>7F3D9A8D-6E18-443E-85B1-235470E6480D</string>
+	<key>IDECodeSnippetLanguage</key>
+	<string>Xcode.SourceCodeLanguage.Swift</string>
+	<key>IDECodeSnippetTitle</key>
+	<string>RawOptionSetType</string>
+	<key>IDECodeSnippetUserSnippet</key>
+	<true/>
+	<key>IDECodeSnippetVersion</key>
+	<integer>2</integer>
+</dict>
+</plist>
